@@ -1,0 +1,139 @@
+{
+  "theme": "light",
+  "archetype": "Swiss & High-Contrast (Industrial B2B)",
+  "design_principles": [
+    "Authority and Clarity: Clean, industrial aesthetic prioritizing ease of navigation.",
+    "Data Visibility: Strict 3-column product grids with prominent visual hierarchy.",
+    "Brand Presence: Orange accent color used strategically for key actions and focus."
+  ],
+  "colors": {
+    "primary": "#f97316",
+    "primary_hover": "#ea580c",
+    "background": "#ffffff",
+    "surface": "#f3f4f6",
+    "surface_hover": "#e5e7eb",
+    "text_primary": "#111827",
+    "text_secondary": "#4b5563",
+    "border": "#e5e7eb",
+    "badges": {
+      "success": "#22c55e",
+      "featured": "#f97316",
+      "neutral": "#9ca3af",
+      "danger": "#ef4444"
+    },
+    "admin_portal": {
+      "sidebar_bg": "#1a1a2e",
+      "sidebar_active": "#f97316",
+      "main_content": "#ffffff"
+    }
+  },
+  "typography": {
+    "font_family_headings": "Work Sans, sans-serif",
+    "font_family_body": "Work Sans, sans-serif",
+    "heading_weight": "500",
+    "text_case": "sentence case (never ALL CAPS)",
+    "scale": {
+      "h1": "text-4xl md:text-5xl lg:text-6xl tracking-tight",
+      "h2": "text-2xl md:text-3xl lg:text-4xl tracking-tight",
+      "h3": "text-xl md:text-2xl",
+      "h4": "text-lg md:text-xl",
+      "body": "text-base",
+      "small": "text-sm"
+    }
+  },
+  "layout_and_spacing": {
+    "spacing_scale": "Generous spacing. p-6 or p-8 inside cards, gap-8 between sections.",
+    "product_grid": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
+    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "cards": {
+      "background": "#ffffff",
+      "border": "1px solid #e5e7eb",
+      "border_radius": "12px",
+      "hover_animation": "hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+    }
+  },
+  "ui_elements": {
+    "buttons": {
+      "primary": "bg-[#f97316] text-white hover:bg-[#ea580c] rounded-xl px-4 py-2 font-medium transition-colors",
+      "outline": "border border-[#f97316] text-[#f97316] hover:bg-orange-50 rounded-xl px-4 py-2 font-medium transition-colors",
+      "ghost": "bg-transparent text-gray-700 hover:bg-gray-100 rounded-xl px-4 py-2 font-medium transition-colors"
+    },
+    "colour_dots": {
+      "shape": "rounded-full",
+      "card_size": "w-4 h-4",
+      "detail_size": "w-7 h-7",
+      "selected_state": "ring-2 ring-offset-2 ring-[#f97316]"
+    },
+    "mobile_nav": "Hamburger menu on left/right, Call Us + Contact as prominent CTAs in the menu."
+  },
+  "components_strategy": {
+    "shadcn": "Override default border-radius to 12px (0.75rem). Map primary colors to Tailwind orange-500. Ensure 0.5px border uses Tailwind's border class with border-gray-200.",
+    "badges": "Use rounded-full px-2.5 py-0.5 text-xs font-medium with respective color mapping.",
+    "data_testid": "MANDATORY. Apply data-testid to all interactive elements (buttons, inputs, links)."
+  },
+  "media_urls": {
+    "hero_backgrounds": [
+      {
+        "url": "https://images.unsplash.com/photo-1767294274634-613a3545e36d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3YXJlaG91c2UlMjBjbGVhbnxlbnwwfHx8fDE3NzU5OTIxNTl8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Clean modern industrial warehouse interior"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1772300704502-410f0fbd43bb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjB3YXJlaG91c2UlMjBjbGVhbnxlbnwwfHx8fDE3NzU5OTIxNTl8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Spacious empty warehouse interior"
+      }
+    ],
+    "product_images": [
+      {
+        "url": "https://images.unsplash.com/photo-1759830337357-29c472b6746c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZWxlY3RyaWNhbCUyMGVxdWlwbWVudHxlbnwwfHx8fDE3NzU5OTIxNTl8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Industrial electrical boxes and equipment"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1773952136583-5175e906267c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHw0fHxpbmR1c3RyaWFsJTIwZWxlY3RyaWNhbCUyMGVxdWlwbWVudHxlbnwwfHx8fDE3NzU5OTIxNTl8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Close-up of main switch electrical panel"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1758101755915-462eddc23f57?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwzfHxlbGVjdHJpY2FsJTIwZW5naW5lZXIlMjBpbmR1c3RyaWFsfGVufDB8fHx8MTc3NTk5MjE1M3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Electrician testing electrical panel"
+      }
+    ],
+    "client_logos": [
+      {
+        "url": "https://images.unsplash.com/photo-1659893982147-e9ddb94de39a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nbyUyMGlzb2xhdGVkfGVufDB8fHx8MTc3NTk5MjE1M3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Client Company Logo 1"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1760037034572-24141225b295?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwzfHxicmFuZCUyMGxvZ28lMjBjbGVhbnxlbnwwfHx8fDE3NzU5OTIxNTl8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Client Company Logo 2"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1580422605366-cfb9b577b361?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwyfHxicmFuZCUyMGxvZ28lMjBjbGVhbnxlbnwwfHx8fDE3NzU5OTIxNTl8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Client Company Logo 3"
+      }
+    ],
+    "testimonials": [
+      {
+        "url": "https://images.unsplash.com/photo-1655249493799-9cee4fe983bb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGhlYWRzaG90fGVufDB8fHx8MTc3NTk5MjE1M3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Portrait of a testimonial author 1"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1576558656222-ba66febe3dec?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGhlYWRzaG90fGVufDB8fHx8MTc3NTk5MjE1M3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Portrait of a testimonial author 2"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1769636929388-99eff95d3bf1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGhlYWRzaG90fGVufDB8fHx8MTc3NTk5MjE1M3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Portrait of a testimonial author 3"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Strictly adhere to the light theme, and NEVER use dark UI except for the Admin sidebar (#1a1a2e).",
+    "Use exact radii (12px or rounded-xl) across all card and modal primitives to maintain the precise brand identity.",
+    "Do not use uppercase/ALL CAPS text; enforce sentence case everywhere as mandated.",
+    "Ensure all buttons, form fields, and interactive links have robust data-testid attributes.",
+    "Maintain the layout structure: Desktop = 3 cols, Tablet = 2 cols, Mobile = 1 col. Use Tailwind's native breakpoint utility.",
+    "Leverage React icons or Lucide React icons extensively, keeping them clean.",
+    "Shadcn components MUST be tailored; overriding the radius and primary color in Tailwind configuration is critical.",
+    "For the admin portal dashboard, use standard analytics chart components (Recharts) with clean tooltips and orange accents.",
+    "Construct the .js files natively without TypeScript types as requested by the hybrid_fullstack tech stack."
+  ]
+}
