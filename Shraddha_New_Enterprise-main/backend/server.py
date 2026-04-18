@@ -140,10 +140,10 @@ async def login(req: LoginRequest, response: Response):
     token = create_token(admin["id"], admin["email"])
     response.set_cookie(
         key="access_token", value=token,
-        httponly=True, secure=False, samesite="lax",
+        httponly=True, secure=True, samesite="none",
         max_age=86400, path="/"
     )
-    return {"id": admin["id"], "email": admin["email"], "name": admin.get("name", "Admin")}
+    return {"id": admin["id"], "email": admin["email"], "name": admin.get("name", "Admin"), "token": token}
 
 @api_router.get("/auth/me")
 async def get_me(admin=Depends(get_current_admin)):
