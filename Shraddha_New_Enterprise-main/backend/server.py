@@ -34,9 +34,13 @@ api_router = APIRouter(prefix="/api")
 
 # CORS
 frontend_url = os.environ.get('FRONTEND_URL', 'http://localhost:3000')
+frontend_url = os.environ.get('FRONTEND_URL', 'http://localhost:3000')
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://shraddha-recent-bp3e6m6t2-hingepratik8-4340s-projects.vercel.app",
+        "http://localhost:3000",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
