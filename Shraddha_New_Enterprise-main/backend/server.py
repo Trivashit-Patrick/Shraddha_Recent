@@ -741,16 +741,15 @@ async def seed_data():
     await db.queries.create_index("created_at")
 
     # Write test credentials
-    os.makedirs("/app/memory", exist_ok=True)
-    with open("/app/memory/test_credentials.md", "w") as f:
-        f.write("# Test Credentials\n\n")
-        f.write("## Admin\n")
-        f.write(f"- Email: {ADMIN_EMAIL}\n")
-        f.write(f"- Password: {ADMIN_PASSWORD}\n\n")
-        f.write("## Auth Endpoints\n")
-        f.write("- POST /api/auth/login\n")
-        f.write("- GET /api/auth/me\n")
-        f.write("- POST /api/auth/logout\n")
+    # Write test credentials
+    try:
+        os.makedirs("/app/memory", exist_ok=True)
+        with open("/app/memory/test_credentials.md", "w") as f:
+            f.write("# Test Credentials\n\n")
+            f.write(f"- Email: {ADMIN_EMAIL}\n")
+            f.write(f"- Password: {ADMIN_PASSWORD}\n")
+    except Exception:
+        pass
 # ── FEEDBACK ──────────────────────────────────────────────────
 
 class FeedbackModel(BaseModel):
