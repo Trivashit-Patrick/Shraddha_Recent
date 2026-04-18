@@ -305,35 +305,29 @@ export default function HomePage() {
 
       {/* HERO + CAROUSEL */}
       <section className="bg-[#111827] overflow-hidden pb-2" data-testid="hero-section">
-        {featured.length > 0 ? (
-          <div className="pt-6" data-testid="featured-carousel">
-            <FeaturedCarousel products={featured} />
-          </div>
-        ) : (
-          /* Fallback hero when no featured products */
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-            <h1 className="text-4xl md:text-5xl font-medium text-white leading-tight mb-4">
-              Industrial & electrical products{" "}
-              <span className="text-[#f97316]">you can trust</span>
-            </h1>
-            <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-              Quality crimping tools, cable accessories, electrical components — delivered across India.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <Link to="/products">
-                <Button className="bg-[#f97316] hover:bg-[#ea580c] text-white rounded-xl px-6 py-2.5 text-sm">
-                  Browse products <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-xl px-6 py-2.5 text-sm">
-                  Contact us
-                </Button>
-              </Link>
-            </div>
-          </div>
-        )}
-      </section>
+  {featured.length > 0 ? (
+    <div className="pt-6" data-testid="featured-carousel">
+      <FeaturedCarousel products={featured} />
+    </div>
+  ) : (
+    <div className="max-w-5xl mx-auto px-4 py-12">
+      {/* Loading skeleton */}
+      <div className="text-center mb-8">
+        <div className="h-4 bg-white/10 rounded-full w-32 mx-auto mb-4 animate-pulse" />
+        <div className="h-8 bg-white/10 rounded-full w-96 mx-auto mb-3 animate-pulse" />
+        <div className="h-4 bg-white/10 rounded-full w-64 mx-auto animate-pulse" />
+      </div>
+      <div className="flex gap-4 justify-center items-center overflow-hidden">
+        <div className="w-full max-w-xl h-64 bg-white/5 rounded-2xl animate-pulse flex-shrink-0" />
+      </div>
+      <div className="flex justify-center gap-2 mt-6">
+        {[1,2,3].map(i => (
+          <div key={i} className="w-2 h-2 rounded-full bg-white/20 animate-pulse" />
+        ))}
+      </div>
+    </div>
+  )}
+</section>
 
       {/* FEATURES */}
       <section className="py-16 bg-white" data-testid="features-section">
