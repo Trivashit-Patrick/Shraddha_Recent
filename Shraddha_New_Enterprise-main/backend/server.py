@@ -15,6 +15,8 @@ from datetime import datetime, timezone, timedelta
 import os, logging, uuid, io, csv
 import bcrypt
 import jwt
+import cloudinary
+import cloudinary.uploader
 
 # --- Config ---
 UPLOAD_DIR = ROOT_DIR / "uploads"
@@ -31,6 +33,13 @@ ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', 'admin123')
 
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
+
+# Configure Cloudinary
+cloudinary.config(
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET")
+)
 
 # CORS
 frontend_url = os.environ.get('FRONTEND_URL', 'http://localhost:3000')
@@ -465,18 +474,22 @@ async def list_testimonials():
 # ==================== FILE UPLOAD ====================
 @api_router.post("/upload")
 async def upload_file(file: UploadFile = File(...), admin=Depends(get_current_admin)):
-    allowed = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".pdf"}
+    allowed = {".jpg", ".jpeg", ".png", ".gif", ".webp"}
     ext = Path(file.filename).suffix.lower()
     if ext not in allowed:
         raise HTTPException(status_code=400, detail=f"File type {ext} not allowed")
-    filename = f"{uuid.uuid4()}{ext}"
-    filepath = UPLOAD_DIR / filename
     content = await file.read()
     if len(content) > 10 * 1024 * 1024:
         raise HTTPException(status_code=400, detail="File too large (max 10MB)")
-    with open(filepath, "wb") as f:
-        f.write(content)
-    return {"url": f"/api/uploads/{filename}", "filename": filename}
+    try:
+        result = cloudinary.uploader.upload(
+            content,
+            folder="shraddha_enterprises",
+            resource_type="image"
+        )
+        return {"url": result["secure_url"], "filename": result["public_id"]}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
 
 
 # ==================== SEED DATA ====================

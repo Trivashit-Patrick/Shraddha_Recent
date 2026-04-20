@@ -12,3 +12,4 @@ email-validator
 httpx
 python-jose[cryptography]
 passlib[bcrypt]
+cloudinary
